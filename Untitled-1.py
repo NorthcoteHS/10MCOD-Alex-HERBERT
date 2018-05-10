@@ -4,7 +4,7 @@ Date: 05-08-18
 Author: Alex Herbert
 Description: A program that tests users knowledge on a variety of topics.
 """
-score = int(0)
+
 countdown = ['3','2','1','Next Question!','']
 questionlist = ["Question 1: What colour is Supreme's classic bogo? ",'Question 2: What country did Bape originate in? ', 'How many collaborations have The North Face and Supreme done?']
 answerlist = ['red', 'japan', 'two']
@@ -13,13 +13,10 @@ def ask():
     finalanswer = answer.lower()
     if finalanswer == a:
         print('Correct!')
-        score = score + 1
-        print("Your score is" + score)
         for item in countdown:
             print(item)
     if finalanswer != a:
         print('Incorrect :(')
-        print("Your score is" + score)
         for item in countdown:
             print(item)
 
