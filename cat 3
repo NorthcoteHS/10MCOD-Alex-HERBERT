@@ -4,10 +4,29 @@ Date: 06-05-18
 Author: Alex Herbert
 Description: A program that calculates facts about the users age using their date of birth
 """
-def mainmenu():
+from datetime import date
+def agecalculator():
+    birthyear = input("Please enter your year of birth in the format YYYY: ")
+    birthmonth = input("Please enter your month of birth in the format MM: ")
+    birthday = input("Please enter your day of birth in the format DD: ")
+    birthyearfinal = int(birthyear)
+    birthmonthfinal = int(birthmonth)
+    birthdayfinal = int(birthday)
+    currentyear = input("Please enter the current year in the format YYYY: ")
+    currentmonth = input("Please enter the current month in the format MM: ")
+    currentday = input("Please enter the current day in the format DD: ")
+    currentyearfinal = int(currentyear)
+    currentmonthfinal = int(currentmonth)
+    currentdayfinal = int(currentday)
+    fullbirthdate = date(birthyearfinal, birthmonthfinal, birthdayfinal)
+    fullcurrentdate= date(currentyearfinal, currentmonthfinal, currentdayfinal)
+    daysold = fullcurrentdate - fullbirthdate
+    manydaysold = str(daysold.days)
+    print("You are " + manydaysold + " days old")
 
-menuloop ='0'
-while menuloop =='0':
+def mainmenu():
+  menuloop ='0'
+  while menuloop =='0':
     print("Hi! Welcome to the Age Calculator!")
     print("Type 1 to see how many days old you are")
     print("Type 2 to see what your star sign is")
@@ -15,16 +34,4 @@ while menuloop =='0':
     print("Type 4 to compare your age with someone")
 
     choice = input ("Please enter the number of the program you would want to run: ")
-
-    if choice == "1":
-        print("yee")
-    elif choice == "2":
-        print("menu test ")
-    elif choice == "3":
-        print("menu test")
-    elif choice == "4":
-        print("menu test")
-    else:
-        print("I don't understand your choice")
-
- mainmenu()
+    
