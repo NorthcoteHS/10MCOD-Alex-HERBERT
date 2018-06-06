@@ -4,4 +4,27 @@ Date: 06-05-18
 Author: Alex Herbert
 Description: A program that calculates facts about the users age using their date of birth
 """
-print(
+def mainmenu():
+
+menuloop ='0'
+while menuloop =='0':
+    print("Hi! Welcome to the Age Calculator!")
+    print("Type 1 to see how many days old you are")
+    print("Type 2 to see what your star sign is")
+    print("Type 3 to see how long until your next birthday")
+    print("Type 4 to compare your age with someone")
+
+    choice = input ("Please enter the number of the program you would want to run: ")
+
+    if choice == "1":
+        print("yee")
+    elif choice == "2":
+        print("menu test ")
+    elif choice == "3":
+        print("menu test")
+    elif choice == "4":
+        print("menu test")
+    else:
+        print("I don't understand your choice")
+
+ mainmenu()
