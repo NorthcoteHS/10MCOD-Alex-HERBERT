@@ -4,44 +4,76 @@ Date: 06-05-18
 Author: Alex Herbert
 Description: A program that calculates facts about the users age using their date of birth
 """
+# This imports the date function, and datetime, which is used to calculate age and get current time and date
 import datetime
 from datetime import date
+
+# These create the variable "now", which is used to get the currrent day, month, and year
 now = datetime.datetime.now()
 currentyear = now.year
 currentmonth = now.month
 currentday = now.day
+
+# These commands convert the date, month, and year into integers so that they can be used in equations
 currentyearfinal = int(currentyear)
 currentmonthfinal = int(currentmonth)
 currentdayfinal = int(currentday)
+
+# This creates a variable which has information about the date, month, and year
 fullcurrentdate = date(currentyearfinal, currentmonthfinal, currentdayfinal)
 
+# This creates a function which can be called upon to run a program
 def agecomparison():
+  # This gives instructions to users
   print("Hello, and welcome to the age comparison program! This program requires two people to participate. Each user should enter their information seperately.")
+  # This gets the first user's name, so it can be used later
   name1 = input("Please enter your name Player 1: ")
+  # This gets the first user's year of birth, so it can calculate how many days old they are
   birthyear1 = input("Please enter your year of birth in the format YYYY: ")
+  # This converts the birth year string into an integer  so it can be used in equations
+  birthyear1int = int(birthyear1)
+  # This converts the current year into a sting so it can be printed with the error message
+  currentyearstr = str(currentyearfinal)
+  # This loop ensures that the user enters a number which is before the current year, so that the program doesn't give a negative number
+  while birthyear1int >= currentyearfinal:a
+      print('Please enter a year before ' + currentyearstr)
+      birthyear1 = input("Please enter your year of birth in the format YYYY: ")
+      birthyear1int = int(birthyear1)
+      
+  # This gets the first user's month of birth, so it can calculate how many days old they are    
   birthmonth1 = input("Please enter your month of birth in the format MM: ")
-  while birthmonth1 >= '12':
+  # This loop ensures that the user enters a number which represents a month, so the programs does not get confused
+  while birthmonth1 >= '13':
     print("Please enter a number between 01 and 12")
     birthmonth1 = input("Please enter your month of birth in the format MM: ")
+  # This gets the first user's day of birth, so it can calculate how many days old they are          
   birthday1 = input("Please enter your day of birth in the format DD: ")
-  while birthday1 >= '31':
+   # This loop ensures that the user enters a number between 1 and 31 so the program doesnt get confused
+  while birthday1 >= '32':
     print("Please enter a number between 01 and 31")
     birthday1 = input("Please enter your day of birth in the format DD: ")
+  # This converts the entered date, month, and year of birth into integers so that the date() command can run
   birthyear1final = int(birthyear1)
   birthmonth1final = int(birthmonth1)
   birthday1final = int(birthday1)
+  # This converts the users birthday into an integer so it can be used for equations
   birthday1full = date(birthyear1final, birthmonth1final, birthday1final)
+  # This calculates how many days old the user is by subtracting their birthday from the current date
   player1age = fullcurrentdate - birthday1full
-  manydaysold1 = int(player1age.days)
-  
+  # These commands are the same, except that they apply for the second user
   name2 = input("Please enter your name Player 2: ")
   birthyear2 = input("Please enter your year of birth in the format YYYY: ")
+  birthyear2int = int(birthyear2)  
+  while birthyear2int >= currentyearfinal:
+    print('Please enter a year before ' + currentyearstr)
+    birthyear2 = input("Please enter your year of birth in the format YYYY: ")
+    birthyear2int = int(birthyear2)
   birthmonth2 = input("Please enter your month of birth in the format MM: ")
-  while birthmonth2 >= '12':
+  while birthmonth2 >= '13':
     print("Please enter a number between 01 and 12")
     birthmonth2 = input("Please enter your month of birth in the format MM: ")
-  birthday2 = input("Please enter your day of birth in the format DD: ")
-  while birthday2 >= '31':
+  birthday2 = input("Please enter of birth in the format DD: ")
+  while birthday2 >= '32':
     print("Please enter a number between 01 and 31")
     birthday2 = input("Please enter your day of birth in the format DD: ")
   birthyear2final = int(birthyear2)  
@@ -84,19 +116,25 @@ def agecomparison():
   
 def agecalculator():
     birthyear = input("Please enter your year of birth in the format YYYY: ")
+    birthyearint = int(birthyear)
+    currentyearstr = str(currentyear)
+    while birthyearint >= currentyearfinal:
+      print('Please enter a year before ' + currentyearstr)
+      birthyear = input("Please enter your year of birth in the format YYYY: ")
+      birthyearint = int(birthyear)9
     birthmonth = input("Please enter your month of birth in the format MM: ")
-    while birthmonth >= '12':
+    while birthmonth >= '13':
       print("Please enter a number between 01 and 12")
       birthmonth = input("Please enter your month of birth in the format MM: ")
     birthday = input("Please enter your day of birth in the format DD: ")
-    while birthday >= '31':
+    while birthday >= '32':
       print("Please enter a number between 1 and 31")
       birthday = input("Please enter your day of birth in the format DD: ")
     birthyearfinal = int(birthyear)
     now = datetime.datetime.now()
     birthmonthfinal = int(birthmonth)
     birthdayfinal = int(birthday)
-    fullbirthdate = date(birthyearfinal, birthmonthfinal, birthdayfinal)
+    fullbirthdate = date(birthyearfinal, birthmonthfinal, birthdayfinal)aa
     daysold = fullcurrentdate - fullbirthdate
     manydaysold = str(daysold.days)
     print("You are " + manydaysold + " days old")
@@ -124,8 +162,12 @@ def mainmenu():
         agecalculator()
     elif choice == "2":
         menuloop = '1'
-        agecomparison()
-    else:
-        print("Sorry, I don't understand your choice")
-        mainmenu()
+        agecomparison()  
+    else:   
+      print("Sorry, I don't understand your choice")
+      mainmenu()
+        
 mainmenu()
+        
+      
+        
